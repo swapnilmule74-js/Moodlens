@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moodlens – emotion detector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main>
+  <header>
+    <h1>Moodlens</h1>
+    <p>Write a sentence. A BiGRU model reads the feeling behind it.</p>
+    <span class="status" id="status"><i></i><b>Connecting…</b></span>
+  </header>
+
+  <section class="stage">
+    <div class="input-card">
+      <label for="text">Your text</label>
+      <textarea id="text" maxlength="2000" placeholder="I can't believe they remembered my birthday…" autofocus></textarea>
+      <div class="row">
+        <span class="count"><span id="count">0</span>/2000</span>
+        <button id="go" type="button">Detect emotion</button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <p class="err" id="err" role="alert" hidden></p>
+    </div>
+
+    <div class="result">
+      <div class="orb-wrap">
+        <div class="ring r1"></div><div class="ring r2"></div>
+        <div class="orb" id="orb" data-state="idle"><span id="emoji">🫧</span></div>
+      </div>
+      <h2 id="label">Waiting for words</h2>
+      <p class="conf" id="conf">Type something and press detect.</p>
+    </div>
+  </section>
+
+  <section class="bars" id="bars" aria-label="Probability for each emotion"></section>
+  <footer>Tip: press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to detect.</footer>
+</main>
+<canvas id="burst" aria-hidden="true"></canvas>
+<script src="/static/script.js"></script>
+</body>
+</html>
