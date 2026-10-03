@@ -3,9 +3,11 @@ const EMO = {
   anger:{c:'#ff4b3e',e:'😠'}, fear:{c:'#9b6bff',e:'😨'}, surprise:{c:'#2ee6c5',e:'😮'}
 };
 const SAMPLES = [
-  'I got the internship I wanted!', 'I miss how things used to be.',
-  'Why would you lie to me like that?', 'I heard footsteps behind me in the dark.',
-  'I can\'t believe this just happened!', 'You mean the world to me.'
+   "I can't believe how happy I am right now, this is amazing!",
+    "I feel so alone and hopeless today.",
+    "I am furious that they cancelled the trip at the last minute.",
+    "I feel terrified when walking down dark alleyways alone.",
+    "I was shocked and completely surprised by the unexpected gift!"
 ];
 const $ = id => document.getElementById(id);
 const text = $('text'), go = $('go'), orb = $('orb'), err = $('err');
